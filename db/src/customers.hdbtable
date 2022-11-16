@@ -3,5 +3,6 @@ COLUMN TABLE "customers"(
   custname varchar(40),
   custcountry varchar(3),
   custregion varchar(4),
+  custcity varchar(40),
   custstatus varchar(3)
 );
