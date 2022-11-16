@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" xmlns:Dimension="http://www.sap.com/ndb/BiModelDimension.ecore" id="customertree" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="customertree"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="customers">
+    <resourceUri>customers</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews/>
+<inlineHierarchy xsi:type="Dimension:LeveledHierarchy" id="LEVEL_1" aggregateAllNodes="true" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
+  <descriptions defaultDescription=""/>
+  <unassignedMemberProperties mode="FALSE"/>
+  <levels>
+    <level levelAttribute="CUSTCOUNTRY" levelType="MDLEVEL_TYPE_REGULAR" order="1" orderAttribute="CUSTCOUNTRY" sortDirection="ASC"/>
+    <level levelAttribute="CUSTREGION" levelType="MDLEVEL_TYPE_REGULAR" order="2" orderAttribute="CUSTREGION" sortDirection="ASC"/>
+    <level levelAttribute="CUSTCITY" levelType="MDLEVEL_TYPE_REGULAR" order="3" orderAttribute="CUSTCITY" sortDirection="ASC"/>
+  </levels>
+</inlineHierarchy>
+
+<logicalModel id="customers">
+  <attributes>
+    <attribute id="CUSTCOUNTRY" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CUSTCOUNTRY"/>
+      <keyMapping columnObjectName="customers" columnName="CUSTCOUNTRY"/>
+    </attribute>
+    <attribute id="CUSTREGION" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CUSTREGION"/>
+      <keyMapping columnObjectName="customers" columnName="CUSTREGION"/>
+    </attribute>
+    <attribute id="CUSTCITY" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CUSTCITY"/>
+      <keyMapping columnObjectName="customers" columnName="CUSTCITY"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  </shapes>
+</layout>
+</Calculation:scenario>
